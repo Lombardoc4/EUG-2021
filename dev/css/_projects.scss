@@ -1,0 +1,107 @@
+section#projects{
+    background-color: $green;
+    color: $white;
+
+        .slideshow-arrow img{
+            opacity: 0.5;
+            height: 25px;
+            width: auto;
+        }
+
+        // Cards
+        .projectCard{
+            // background-color:$white;
+            // color: $black;
+
+
+            // Slideshow
+            .projectSlide{
+                margin: 1em;
+                background-color: $black;
+                border-radius: 0.5em;
+
+
+
+                &:hover {
+                    .slideshow-arrow img{
+                        transition: opacity 0.5s;
+                        opacity: 1;
+                    }
+                }
+
+                .projectImages{
+                    box-shadow: 0 0 0.5em $black;
+                    border-radius: 0.5em;
+                }
+
+                img {
+                    object-fit: cover;
+
+                    width: 0;
+                    opacity: 0;
+                    // transition: opacity 0.5s;
+
+                    &.on{
+                        // transition: transform 0.3s;
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+
+                .slide-title{
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    h3{
+                        text-shadow: 1px 1px 2px $black;
+                    }
+                }
+
+                // Buttons
+                .click-left, .click-right{
+                    // position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 15%;
+                    height: 100%;
+
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: space-evenly;
+
+                    img{
+                        opacity: 0.5;
+                        height: 30px;
+                        width: auto;
+                    }
+                }
+                .click-left{
+                    left: 0;
+                }
+                .click-right{
+                    right: 0;
+                }
+            }
+
+
+
+            // Card Copy/Information
+            .projectInfo{
+                width: 40%;
+                // padding: 1.5em;
+
+                .projectTitle{
+                    line-height: 1;
+                    font-size: 24px;
+                }
+
+                .projectPlants{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+    // }
+
+}
