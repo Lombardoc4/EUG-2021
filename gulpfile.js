@@ -8,7 +8,7 @@ const conf = {
     cssAutoPrefix:   true,
     cssSourceMaps:   false,
     // JavaScript
-    jsMin:           false,
+    jsMin:           true,
     jsBabel:         true,
     jsSourceMaps:    false,
     // php
