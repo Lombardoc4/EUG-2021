@@ -1,8 +1,8 @@
 // eslint-disable-next-line func-names
 (function (doc) {
-    window.onload = () => {
+    window.addEventListener('DOMContentLoaded', () => {
         doc.querySelector('#landing header').classList.add('on');
-    };
+    });
 
     window.addEventListener('scroll', () => {
         const mainNav = doc.getElementById('mainNav');
