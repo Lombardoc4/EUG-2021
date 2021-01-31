@@ -5,12 +5,14 @@
     });
 
     window.addEventListener('scroll', () => {
-        const mainNav = doc.getElementById('mainNav');
-        console.log('test');
-        if (window.scrollY >= 100)
-            mainNav.classList.add('on');
-        else
-            mainNav.classList.remove('on');
+        if (window.innerWidth >= 768) {
+            const mainNav = doc.getElementById('mainNav');
+            console.log('test');
+            if (window.scrollY >= 100)
+                mainNav.classList.add('on');
+            else
+                mainNav.classList.remove('on');
+        }
     });
 
     /**
