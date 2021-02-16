@@ -2,6 +2,9 @@
 (function (doc) {
     window.addEventListener('DOMContentLoaded', () => {
         doc.querySelector('#landing header').classList.add('on');
+
+        if (window.innerWidth < 768)
+            doc.getElementById('mainNav').classList.add('on');
     });
 
     window.addEventListener('scroll', () => {

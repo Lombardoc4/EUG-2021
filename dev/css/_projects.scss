@@ -36,6 +36,11 @@ section#projects{
 
                 img {
                     object-fit: cover;
+                    max-height: 200px;
+
+                    @include breakpoint-up(md){
+                        max-height: 400px;
+                    }
 
                     width: 0;
                     opacity: 0;

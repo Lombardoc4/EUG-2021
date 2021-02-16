@@ -32,11 +32,15 @@ img{
 }
 
 h1, h2, h3, h4, h5{
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: 'Montserrat', Georgia, sans-serif;
 }
 
 h1{
-    font-size: 32px;
+    font-size: 28px;
+    @include breakpoint-up(md){
+        font-size: 32px;
+    }
+
 }
 
 a{
@@ -60,7 +64,11 @@ nav#mainNav{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1em 0;
+    padding: 1em 0 0;
+
+    @include breakpoint-up(md){
+        padding: 1em 0;
+    }
 
     background-color: #ffffff;
 
@@ -107,7 +115,7 @@ nav#mainNav{
         font-size: 20px;
         font-weight: 600;
 
-        a{
+        a:not(.nostyles){
             margin: 0 1em;
             position: relative;
 
@@ -132,6 +140,18 @@ nav#mainNav{
 
 section#landing{
     background-color: #ffffff;
+    height: 450px;
+    margin-bottom: -1em;
+    background-image: url(../img/forest.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+
+    @include breakpoint-up(md){
+        background-position: bottom right;
+        height: 80vh;
+    }
     // height: 60%;
 
     header{
