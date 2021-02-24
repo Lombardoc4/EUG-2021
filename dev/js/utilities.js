@@ -48,6 +48,34 @@ utilities.each = function f(object, callback) {
 };
 
 /**
+     * Iterates over an object's own properties, toggling provided class.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} callback The function executed per own property.
+     */
+utilities.toggleClass = function f(object, className) {
+    this.each(object, (el) => {
+        el.classList.toggle(className);
+    });
+};
+
+/**
+     * Iterates over an object's own properties, toggling provided class with timing.
+     *
+     * @private
+     * @param {Object} object The object to iterate over.
+     * @param {Function} callback The function executed per own property.
+     */
+utilities.toggleClassWithDelay = function f(object, className, timing = 100) {
+    this.each(object, (el, i) => {
+        setTimeout(() => {
+            el.classList.toggle(className);
+        }, timing * i);
+    });
+};
+
+/**
      * An empty iteration utility for arrays.
      *
      * @private

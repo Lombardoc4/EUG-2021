@@ -12,7 +12,7 @@
 
 body {
     user-select: text;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
 
 section:not(#landing){
@@ -22,7 +22,7 @@ section:not(#landing){
     flex-direction: column;
 
     .container{
-        align-items: center;
+        // align-items: center;
         // padding: 4em 0 0 0;
     }
 }
@@ -32,7 +32,7 @@ img{
 }
 
 h1, h2, h3, h4, h5{
-    font-family: 'Montserrat', Georgia, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1{
@@ -45,13 +45,15 @@ h1{
 
 a{
     color: unset;
+    outline: none;
     text-decoration: none;
 }
 
 .container{
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     width: 90%;
+    margin: auto;
     max-width: $max-width;
 }
 
@@ -60,38 +62,21 @@ nav#mainNav{
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color:$white;
+    box-shadow: 0 0 10px $black;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1em 0 0;
+    height: 75px;
+    padding: 0.5em 0;
 
-    @include breakpoint-up(md){
-        padding: 1em 0;
-    }
 
-    background-color: #ffffff;
-
-    transition: box-shadow 0.3s;
-
-    &.on{
-        box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
-        transition: box-shadow 0.3s;
-
-        img{
-            opacity: 1;
-            transition: opacity 0.3s;
-        }
-
-        .emailNav{
-            opacity: 1;
-            transition: opacity 0.3s;
-        }
-    }
-
-    .container{
-        align-items: center;
-        justify-content: space-between;
+    header{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     img{
@@ -99,25 +84,27 @@ nav#mainNav{
         opacity: 0;
     }
 
-    .emailNav{
-        opacity: 0;
-    }
-
-    a{
-        color: $black;
-    }
 
     .links{
         display: flex;
         justify-content: center;
 
-        font-family: 'Montserrat', Arial, sans-serif;
+        font-family: 'Raleway', Arial, sans-serif;
         font-size: 20px;
         font-weight: 600;
 
         a:not(.nostyles){
             margin: 0 1em;
             position: relative;
+            opacity: 0;
+            transform: translateY(20%);
+
+
+            &.on{
+                transform: translateY(0);
+                opacity: 1;
+                transition: transform 0.5s, opacity 0.5s;
+            }
 
             &:before{
                 content: "";
@@ -136,32 +123,65 @@ nav#mainNav{
         }
     }
 
+    &.on{
+        transition: box-shadow 0.3s, background-color 0.3s;
+
+        img{
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        a:not(.nostyles){
+            color: $black;
+            text-shadow: none;
+            transition: color 0.3s;
+        }
+    }
+
 }
 
 section#landing{
-    background-color: #ffffff;
-    height: 450px;
-    margin-bottom: -1em;
-    background-image: url(../img/forest.svg);
+    // background-color: #ffffff;
+    text-shadow: 1px 1px 2px $black;
+    box-shadow: inset 0 0 10px rgba(0,0,0,1);
+
+
+    color: #ffffff;
+    // height: 450px;
+    margin-top: -6em;
+    padding: 8em 0 2em;
+    background-image: url(../img/plants/natives1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
+
+    // align-items: center;
+    // display: flex;
 
 
-    @include breakpoint-up(md){
-        height: 80vh;
-    }
+    // @include breakpoint-up(md){
+    //     height: 80vh;
+    // }
     // height: 60%;
 
     header{
         opacity: 0;
-        transform: translateY(20%);
+        // transform: translateY(20%);
         width: 100%;
 
         &.on{
-            transform: translateY(0);
+            // transform: translateY(0);
             opacity: 1;
-            transition: opacity 1s, transform 0.6s;
+            transition: opacity 1s 0.5s;
+        }
+
+        .btn{
+            width: 50%;
+            text-align: center;
+            background-color: rgba(209, 236, 199, 1);
+            border-radius: 5px;
+            padding: 0.5em;
+            margin: 0.5em auto;
         }
     }
 
@@ -170,7 +190,6 @@ section#landing{
     }
 
 }
-
 
 
 @import 'projects.scss';
