@@ -8,12 +8,14 @@ $breakpoints: (
 ) !default;
 $display: inline-block, inline, block, flex, none !default;
 $spacer: 1px !default;
-$spacers: (0, auto, -12, 12);
+$spacers: (0, auto, -24, -12, 12, 24);
 $sizes: (
   0: 0,
   15: 15%,
   25: 25%,
   33: 33%,
+  34: 34%,
+  40: 40%,
   50: 50%,
   66: 66%,
   75: 75%,
@@ -127,7 +129,7 @@ $grid-columns:  12 !default;
     }
 
     // overflow#{$size}
-    @each $key in (visible, auto, hidden){
+    @each $key in (visible, auto, hidden, scroll){
       .overflow#{$size}-#{$key}{ overflow: #{$key}; }
     }
 
@@ -191,7 +193,7 @@ $grid-columns:  12 !default;
     .clearfix#{$size}{ @include clearfix(); }
 
     // flex align
-    @each $key in (auto, start, end, center, baseline, stretch){
+    @each $key in (auto, start, end, flex-end, center, baseline, stretch){
       .align-self#{$size}-#{$key}{ align-self:  #{$key}; }
       .align-items#{$size}-#{$key}{ align-items:  #{$key}; }
     }

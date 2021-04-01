@@ -87,7 +87,7 @@ function gulpFiles(glob, destPath, changedContents) {
     // set up the source of our files, include glob while ignoring other stuff
     const source = [
         `${conf.path.dev}/${destPath}**/*${glob}`,
-        // `!${conf.path.dev}/**/*.tpl.html`, // ignore html tpl files
+        `!${conf.path.dev}/**/*.tpl.html`, // ignore html tpl files
         // `!${conf.path.dev}/**/*.map`, // ignore map files
         // `!${conf.path.dev}/**/*LICENSE`, // ignore license files
         `!${conf.path.dev}/**/*package-lock.json`, // ignore package lock files
@@ -217,7 +217,7 @@ exports.html     = function html() { return gulpFiles('.html', '', true); };
 * We watch for changes.
 */
 function watchMe() {
-    watch(`${conf.path.dev}/**/*.html`, exports.html);
+    watch([`${conf.path.dev}/**/*.html`, `${conf.path.dev}/**/*.tpl.html`], exports.html);
     // watch(`${conf.path.dev}/**/*.php`, exports.php);
     watch(`${conf.path.dev}/**/*.scss`, exports.sass);
     watch(`${conf.path.dev}/**/*.js`, exports.js);

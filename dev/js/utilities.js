@@ -67,11 +67,11 @@ utilities.toggleClass = function f(object, className) {
      * @param {Object} object The object to iterate over.
      * @param {Function} callback The function executed per own property.
      */
-utilities.toggleClassWithDelay = function f(object, className, timing = 100) {
+utilities.toggleClassWithDelay = function f(object, className, interval = 100, delay) {
     this.each(object, (el, i) => {
         setTimeout(() => {
             el.classList.toggle(className);
-        }, timing * i);
+        }, interval * i + delay);
     });
 };
 
@@ -86,5 +86,18 @@ utilities.emptyArray = function f(arr) {
     arr.length = 0;
     arr = [];
 };
+
+/**
+     * An empty iteration utility for HTML Elements.
+     *
+     * @private
+     * @param {HTMLElement} parent The object to iterate over.
+     */
+ utilities.emptyElement = function f(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+};
+
 
 window._ = utilities;

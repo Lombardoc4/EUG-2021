@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/eug.min.css">
+    <title>Evolution Urban Grows</title>
+
+</head>
+<body>
+
+    <div class="preloader">
+        <img src="img/leaf.svg" alt="">
+    </div>
+    <!-- @import nav.tpl.html -->
+
+    <div id="mainContent" class="d-none">
+
+        <section class="contact">
+
+            <div class="contactMain py-24">
+                <div class="contactContent position-relative">
+                    <img src="img/logo.png" alt="" class="mx-auto">
+
+                    <div class="contact_form my-12">
+                            <input id="contactName" class="w-100" autocomplete="off" type="text" placeholder="Name" name="name" id="">
+                            <input id="contactEmail" class="w-100" autocomplete="off" type="text" placeholder="Email" name="email" id="">
+                            <textarea id="contactMessage" class="w-100" rows="5" autocomplete="off" placeholder="Inquiry/Message" type="text"  name="inquiry" id=""></textarea>
+                        </div>
+                    <div id="contactSubmit" class="contact_link box-shadow-small w-100 w-md-50 text-align-center text-white mx-auto">Send Inquiry</div>
+                    <div class="on email-confirm d-flex flex-column align-items-center justify-content-center border-radius">
+                        <div class="check-css"></div>
+                        Message Sent!
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- @import footer.tpl.html -->
+        </section>
+
+    </div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript" src="./js/utilities.min.js"></script>
+    <script type="text/javascript" src="./js/index.min.js"></script>
+
+
+
+</body>
+</html>

@@ -1,9 +1,27 @@
 // Colors
-$green: #127c00;
-$green2: #00cc18;
+$green: #679436;
+$light-green: #95A472;
 $white: #ffffff;
 $black: #000000;
 $grey: #a6a6a6;
+$light-grey: #e0e0e0;
+$dark-blue: #05668D;
+$cream: #EBF2FA;
+$light-blue: #6ba2ca;
+$orange: #FFCB77;
+
+$theme-colors: (
+    'black':        $black,
+    'white':        $white,
+    'green':        $green,
+    'light-green':  $light-green,
+    'grey':         $grey,
+    'cream':        $cream,
+    'light-blue': $light-blue,
+    'dark-blue': $dark-blue,
+    'light-gren': $light-grey,
+    'orange': $orange
+);
 
 
 // Breakpoints
@@ -16,4 +34,4 @@ xl: 1200px
 );
 
 // Max container Size
-$max-width: 1000px;
+$max-width: 1100px;
